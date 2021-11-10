@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: slategray;
+  overflow: hidden;
+  height: 100%;
+}
+/* =============== Launch Controls =================*/
+
+.launch-controls {
+  position: absolute;
+  bottom: 3%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1%;
+}
+form {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+form input {
+  cursor: pointer;
+}
+form label {
+  font-weight: bold;
+  display: block;
+}
+form div {
+  margin-right: 25px;
+}
+form small {
+  top: -8px;
+  position: relative;
+  font-size: 8px;
+}
+.launch-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.launch-buttons button {
+  background: transparent;
+  margin-right: 10px;
+  border: solid 1px #000;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.launch-buttons button:hover {
+  background-color: #b05c4c;
+}
+/* ================ projectile container =========*/
+.projectile {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.projectile-container {
+  height: 80%;
+  box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+  position: relative;
+  width: 98%;
+  background: #c9852454;
+  overflow: hidden;
+}
+/* ================= Road ================ */
+.road {
+  transform: skew(60deg);
+  border: solid 2px #000;
+  border-right: 0px;
+  background: #c98524;
+  background-color: slategray;
+}
+.road-top {
+  height: 15px;
+  border-bottom: dashed 2px #fff;
+}
+.road-bottom {
+  height: 25px;
+}
+/* ================ Tank ================ */
+.tank {
+  position: relative;
+}
+
+canvas {
+  background: linear-gradient(to bottom, #0181ff 0%, #94edff 100%);
+}
+
+.tank-cannon {
+  height: 100%;
+  display: block;
+  background: #5d6239;
+  width: 83px;
+
+  position: relative;
+
+  border-radius: 5px;
+  border: solid 1px;
+}
+
+.tank-top {
+  display: block;
+  background: #5d6239;
+  height: 21px;
+  width: 50px;
+  z-index: 2;
+  border-radius: 7px 70px 0px 0px;
+  border: solid 1px;
+  margin-left: 20px;
+  position: relative;
+}
+
+.tank-bottom {
+  display: block;
+  background: #5d6239;
+  height: 10px;
+  width: 80px;
+  z-index: 2;
+  border-radius: 4px 13px 0px 0px;
+  border: solid 1px;
+  margin-left: 11px;
+  position: relative;
+}
+
+.tank-wheels {
+  display: block;
+  background: #341808;
+  height: 25px;
+  width: 100px;
+  z-index: 2;
+  border-radius: 16px 16px 35px 35px;
+  border: solid 1px;
+  position: relative;
+}
+
+.tank-container {
+  position: absolute;
+  bottom: 75px;
+  opacity: 0.8;
+}
+
+.tank-cannon-top {
+  position: relative;
+}
+
+.tank-cannon-top span {
+  display: block;
+  height: 20px;
+  width: 16px;
+  background: #121212;
+  border-radius: 50%;
+  top: -1px;
+  position: absolute;
+  right: -3px;
+}
+
+.cannon-base {
+  position: relative;
+  background: black;
+  width: 20px;
+  height: 20px;
+  transform: rotate(-60deg);
+  left: 50px;
+  top: 32px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* ============= Show max values ======== */
+.show-max {
+  height: 9px;
+  background: #1bf900;
+  display: block;
+  position: absolute;
+  left: 60px;
+  bottom: 100px;
+  border-radius: 5px;
+  border: solid 1px#000;
+  opacity: 0.8;
+  width: 0px;
+  transition: 0.5s;
+}
+
+.show-max div {
+  position: relative;
+}
+
+.show-max .height {
+  display: block;
+  position: absolute;
+  left: 49.5%;
+  background: #0092f9;
+  bottom: 0;
+  border-radius: 5px;
+  border: solid 1px #000;
+  opacity: 0.8;
+  width: 9px;
+  height: 0px;
+  transition: 0.5s;
+}
+
+/*======= Values =======*/
+.max-values {
+  position: absolute;
+  top: 6%;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-weight: bold;
+}
+.max-values span {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.max-values span:first-child {
+  background: #0092f959;
+}
+.max-values span:nth-child(2) {
+  background: #1bf9004a;
+}
+
+.max-values span:last-child {
+  background: #f9320078;
+}

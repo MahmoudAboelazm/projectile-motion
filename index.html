@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="projectile motion">
+    <title>Projectile Motion</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <section class="launch-controls">
+        <form>
+            <div>
+                <label for="gravity">
+                    Gravity (m/s<small>2</small>)
+                </label>
+                <select name="gravity" aria-label="gravity value">
+                    <option value="9.8">Earth</option>
+                    <option value="3.7">Mercury</option>
+                    <option value="8.870">Venus</option>
+                    <option value="1.62">Moon</option>
+                    <option value="3.711">Mars</option>
+                    <option value="24.79">Jupiter</option>
+                    <option value="10.44">Saturn</option>
+                    <option value="8.69">Urans</option>
+                    <option value="11.15">Neptune</option>
+                    <option value="6.2">Pluto</option>
+                    <option value="274">Sun</option>
+                </select>
+            </div>
+            <div>
+                <label for="velocity">
+                    Velocity (m/s)
+                </label>
+                <input type="range" min="0" max="200" value="90" name="velocity" aria-label="velocity value"
+                    oninput="this.nextElementSibling.value = this.value">
+                <output>90</output>
+            </div>
+            <div>
+                <label for="angle">
+                    Angle (degree)
+                </label>
+                <input type="range" min="0" max="90" value="60" name="angle" aria-label="angle value"
+                    oninput="this.nextElementSibling.value = this.value" onchange="getFormValues()">
+                <output>60</output>
+            </div>
+            
+        </form>
+        <div class="launch-buttons">
+            <button aria-label="Lanuch" onclick="lanuch()" class="lanuch">Launch</button>
+            <button aria-label="Reset" onclick="resetValues()">Reset</button>
+        </div>
+    </section>
+    <section class="projectile">
+        <div class="projectile-container">
+            <canvas id="projectileCanvas" width="0" height="0"></canvas>
+            <div class="road">
+                <div class="road-top"></div>
+                <div class="road-bottom"></div>
+            </div>
+            <div class="tank-container">
+                <ul class="tank">
+                    <li class="cannon-base">
+                        <span class="tank-cannon">
+                            <div class="tank-cannon-top"><span></span></div>
+                        </span>
+                    </li>
+                    <li class="tank-top"></li>
+                    <li class="tank-bottom"></li>
+                    <li class="tank-wheels"></li>
+                </ul>
+            </div>
+
+            <div class="show-max">
+                <div>
+                    <span class="height"></span>
+                </div>
+            </div>
+        </div>
+        <div class="max-values">
+            <span>Height: </span>
+            <span>Distance: </span>
+            <span>Time: </span>
+        </div>
+    </section>
+</body>
+<script src="main.js"></script>
+
+</html>
